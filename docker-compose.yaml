@@ -10,6 +10,7 @@ services:
     volumes:
     - /data/php-apache/html:/var/www/html:rw
     - /data/php-apache/php.ini:/usr/local/etc/php/php.ini:rw
+    command: /var/www/html/step2.sh
     links:
     - mariadb
   mariadb:
