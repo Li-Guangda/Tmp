@@ -1,0 +1,28 @@
+version: '3'
+services:
+  apache:
+    image: php-apache-mysql
+    container_name: php
+    restart: always
+    ports:
+    - 80:80
+    - 443:443
+    volumes:
+    - /data/php-apache/html:/var/www/html:rw
+    - /data/php-apache/php.ini:/usr/local/etc/php/php.ini:rw
+    links:
+    - mariadb
+  mariadb:
+    restart: always
+    image: mariadb:10.9.2
+    container_name: mariadb
+    environment:
+    - "MARIADB_ROOT_PASSWORD=123"
+    - "TZ=Asia/Shanghai"
+    ports:
+    # 使用宿主机的3306端口映射到容器的3306端口
+    # 宿主机：容器
+    - 3306:3306
+    volumes:
+    # 持久化 mysql
+    - /data/mysql/data:/var/lib/mysql/:rw
