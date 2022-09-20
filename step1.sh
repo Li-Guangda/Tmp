@@ -1,13 +1,13 @@
 #!/bin/bash
 
 echo -e "更新源,升级依赖"
-apt -y update && apt -y upgrade
+apt-get -y update && apt -y upgrade
 
 echo -e "安装常用命令"
-apt install -y git unzip 
+apt-get install -y git unzip 
 
 echo -e "安装Docker和Docker-Compose"
-apt install -y docker.io docker-compose
+apt-get install -y docker.io docker-compose
 
 echo -e "拉取mariadb镜像"
 docker pull mariadb:10.9.2
