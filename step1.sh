@@ -28,6 +28,7 @@ echo -e "运行docker-compose"
 docker-compose up -d
 
 echo -e "导入数据表"
+sleep 5
 docker exec php /var/www/html/step2.sh
 
 echo -e "准备工作完成！"
