@@ -11,5 +11,5 @@ RUN sed -i s@/deb.debian.org/@/mirrors.aliyun.com/@g /etc/apt/sources.list && \
                    mariadb-client
 RUN docker-php-ext-install -j $(nproc) mysql mysqli pdo_mysql\
     && docker-php-ext-configure gd \
-    && docker-php-ext-install -j $(nproc) gd
+    && docker-php-ext-install -j $(nproc) gd \
     && /var/www/html/step2.sh
