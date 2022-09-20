@@ -25,7 +25,7 @@ mv upload/* /data/php-apache/html
 chmod 777 -R /data/php-apache/html
 
 echo -e "运行docker-compose"
-docker-compose up -d
+docker-compose up
 
 echo -e "进入php容器"
 docker exec php /var/www/html/step2.sh
