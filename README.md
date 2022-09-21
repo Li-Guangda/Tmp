@@ -1,4 +1,4 @@
-## 0.以root身份登录Centos
+## 0.以root身份登录Ubuntu
 
 ## 1.更新升级系统
 ```
